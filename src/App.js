@@ -1,13 +1,18 @@
-import Header from './Component/Header';
+import Layout from "./Layout/Layout";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./Pages/Home";
+import About from "./Pages/About";
 
 function App() {
   return (
-    <div>
-      <h1><Header /></h1>
-      <div>
-        <h2>How is that going???.......</h2>
-      </div>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="about" element={<About />}></Route>
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
